@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadow's Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body { background-color: #0e0e10; color: #fff; font-family: 'Poppins', sans-serif; }
+        .header-banner { background: linear-gradient(135deg, #1a1a2e, #16213e); padding: 60px 20px; text-align: center; }
+        .header-banner h1 { font-size: 4rem; color: #00f3ff; text-shadow: 0 0 20px #00f3ff; }
+        nav ul { display: flex; justify-content: center; padding: 0; list-style: none; background: #16213e; }
+        nav ul li { margin: 0 15px; }
+        nav ul li a { color: #00f3ff; text-decoration: none; transition: transform 0.3s ease; }
+        nav ul li a:hover { transform: scale(1.2); color: #ff007f; }
+        .content-section { opacity: 0; transform: translateY(50px); transition: all 0.8s ease-in-out; padding: 40px 20px; text-align: center; }
+        .content-section.active { opacity: 1; transform: translateY(0); }
+        .skill-progress p { margin: 10px 0; color: #ff007f; }
+        .progress-bar { display: inline-block; background: #00f3ff; height: 5px; width: 0; transition: width 1.5s ease; }
+        .content-section.active .progress-bar { width: 90%; }
+        .dynamic-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; padding: 20px; }
+        .project-card { background: #1a1a2e; color: #00f3ff; border: 2px solid #ff007f; padding: 20px; border-radius: 10px; box-shadow: 0 0 15px #00f3ff; transition: transform 0.3s ease; }
+        .project-card:hover { transform: scale(1.1); background: #ff007f; color: #0e0e10; }
+        .button { background: #00f3ff; color: #0e0e10; padding: 10px 20px; border-radius: 5px; text-decoration: none; transition: background 0.3s ease; }
+        .button:hover { background: #ff007f; color: #fff; }
+    </style>
+</head>
+<body>
+    <header class="header-banner">
+    <div class="container">
+        <div class="illustration-container">
+            <img src=""C:\Users\jeeva\OneDrive\Desktop\DALL·E 2025-03-15 22.44.13 - A sleek, tech-driven illustration inspired by game UI_UX design. The illustration should feature futuristic digital elements such as glowing circuit l.webp"">
+        </div>
+        <h1>Shadow's Portfolio</h1>
+        <p>Creative Game UI/UX Developer</p>
+    </div>
+</header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#resume">Resume</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="about" class="content-section">
+            <div class="content-container">
+                <h2>About Me</h2>
+                <p>A passionate developer focused on creating immersive and interactive designs that enhance user experience.</p>
+            </div>
+        </section>
+        <section id="skills" class="content-section">
+            <div class="content-container">
+                <h2>Skills</h2>
+                <div class="skill-progress">
+                    <p>HTML/CSS <span class="progress-bar" data-progress="90"></span></p>
+                    <p>JavaScript <span class="progress-bar" data-progress="85"></span></p>
+                    <p>UI/UX Design <span class="progress-bar" data-progress="80"></span></p>
+                </div>
+            </div>
+        </section>
+        <section id="projects" class="content-section dynamic-grid">
+            <div class="content-container">
+                <h2>Projects</h2>
+                <div class="project-card">E-commerce App</div>
+                <div class="project-card">Inventory System</div>
+                <div class="project-card">Currency Converter</div>
+            </div>
+        </section>
+        <section id="contact" class="content-section">
+            <div class="content-container">
+                <h2>Contact Info</h2>
+                <p>Email: <a href="mailto:shadow@example.com">shadow@example.com</a></p>
+                <p>LinkedIn: <a href="#" target="_blank">linkedin.com/in/shadow</a></p>
+            </div>
+        </section>
+        <section id="resume" class="content-section">
+            <div class="content-container">
+                <h2>Resume</h2>
+                <p><a href="#" target="_blank" class="button">Download My Resume</a></p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Shadow. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            document.querySelectorAll('.content-section').forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                if (sectionTop < window.innerHeight * 0.85) {
+                    section.classList.add('active');
+                } else {
+                    section.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
